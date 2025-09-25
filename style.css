@@ -1,0 +1,452 @@
+/* CSS Custom Properties - Ye colors aur values ko easily change karne ke liye */
+:root{
+    --primary-color: #6366f1;
+    --primary-dark: #4f46e5;
+    --success-color: #10b981;
+    --background-light: #f8fafc;
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --border-light: #e2e8f0;
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Universal box-sizing apply kar rahe hain */
+* {
+    box-sizing: border-box;
+}
+
+/* Body styling - Main container setup */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+}
+
+/* Main container - Card design with shadow */
+.container {
+    background: white;
+    padding: 60px 40px;
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Hover effect container ke liye */
+.container:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+/* Title styling - Main heading */
+.title {
+    color: var(--text-dark);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.025em;
+}
+
+/* Subtitle - Secondary text */
+.subtitle {
+    color: var(--text-light);
+    font-size: 1rem;
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+
+/* Progress container - Main progress bar wrapper */
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 50px;
+    max-width: 100%;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Background line - Grey line behind progress */
+.progress-container::before {
+    content: '';
+    background-color: var(--border-light);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 3px;
+    width: 100%;
+    z-index: 1;
+    border-radius: 2px;
+}
+
+/* Progress bar - Animated colored line */
+.progress {
+    background: linear-gradient(90deg, var(--primary-color), var(--success-color));
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 3px;
+    width: 0%;
+    z-index: 2;
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 2px;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+}
+
+/* Circle steps - Individual step circles */
+.circle {
+    background-color: white;
+    color: var(--text-light);
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--border-light);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 600;
+    font-size: 1.1rem;
+    z-index: 3;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Circle hover effect */
+.circle:hover {
+    transform: scale(1.1);
+}
+
+/* Active circle - Current step styling */
+.circle.active {
+    border-color: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+    transform: scale(1.05);
+}
+
+/* Completed circle - Done steps with checkmark */
+.circle.completed {
+    border-color: var(--success-color);
+    background: var(--success-color);
+    color: white;
+}
+
+/* Checkmark for completed steps */
+.circle.completed::before {
+    content: '✓';
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Step labels container */
+.step-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Individual step labels */
+.step-label {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-weight: 500;
+    width: 50px;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+/* Active step label */
+.step-label.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Button container */
+.button-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Button styling - Modern button design */
+.btn {
+    padding: 14px 32px;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    background: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 600;
+    font-size: 1rem;
+    min-width: 120px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Button shine effect */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+/* Button hover shine animation */
+.btn:hover::before {
+    left: 100%;
+}
+
+/* Button hover effects */
+.btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+}
+
+/* Button active state */
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Button focus state for accessibility */
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+}
+
+/* Disabled button styling */
+.btn:disabled {
+    background: var(--border-light);
+    color: var(--text-light);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Remove shine effect from disabled button */
+.btn:disabled::before {
+    display: none;
+}
+
+/* No hover effect for disabled button */
+.btn:disabled:hover {
+    background: var(--border-light);
+    transform: none;
+    box-shadow: none;
+}
+
+/* Progress text styling */
+.progress-text {
+    color: var(--text-dark);
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+/* Modern Animation for active step */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+.circle.active {
+    animation: pulse 2s infinite;
+}
+
+/* =============================================== */
+/*            RESPONSIVE DESIGN                    */
+/* =============================================== */
+
+/* Tablet Design - 768px aur usse kam width ke liye */
+@media (max-width: 768px) {
+    .container {
+        padding: 45px 30px;
+        margin: 15px;
+        border-radius: 20px;
+    }
+    
+    .title {
+        font-size: 1.75rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .progress-container, .step-labels {
+        width: 350px;
+    }
+    
+    .circle {
+        height: 45px;
+        width: 45px;
+        font-size: 1.05rem;
+    }
+    
+    .step-label {
+        font-size: 0.85rem;
+        width: 45px;
+    }
+    
+    .progress-text {
+        font-size: 1.05rem;
+    }
+    
+    .btn {
+        padding: 12px 28px;
+        font-size: 0.95rem;
+        min-width: 110px;
+    }
+    
+    .button-container {
+        gap: 15px;
+    }
+}
+
+/* Mobile Design - 480px aur usse kam width ke liye */
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+    
+    .container {
+        padding: 35px 20px;
+        margin: 10px;
+        border-radius: 16px;
+    }
+    
+    .title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+    }
+    
+    .progress-container, .step-labels {
+        width: 280px;
+    }
+    
+    .circle {
+        height: 40px;
+        width: 40px;
+        font-size: 1rem;
+        border: 2px solid var(--border-light);
+    }
+    
+    .circle.active, .circle.completed {
+        border: 2px solid var(--primary-color);
+    }
+    
+    .circle.completed {
+        border: 2px solid var(--success-color);
+    }
+    
+    .circle.completed::before {
+        font-size: 1rem;
+    }
+    
+    .step-label {
+        font-size: 0.8rem;
+        width: 40px;
+    }
+    
+    .progress-text {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+    
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 200px;
+        padding: 12px 24px;
+        font-size: 0.9rem;
+        min-width: auto;
+        border-radius: 10px;
+    }
+    
+    /* Mobile par smaller shadows */
+    .container {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+    
+    .container:hover {
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+    }
+    
+    .circle.active {
+        box-shadow: 0 6px 20px rgba(99, 102, 241, 0.25);
+    }
+    
+    .btn:hover {
+        box-shadow: 0 6px 20px rgba(99, 102, 241, 0.25);
+    }
+}
+
+/* Extra small devices ke liye - 360px aur kam */
+@media (max-width: 360px) {
+    .container {
+        padding: 25px 15px;
+    }
+    
+    .progress-container, .step-labels {
+        width: 250px;
+    }
+    
+    .circle {
+        height: 35px;
+        width: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .step-label {
+        font-size: 0.75rem;
+        width: 35px;
+    }
+    
+    .title {
+        font-size: 1.3rem;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+        max-width: 180px;
+    }
+}

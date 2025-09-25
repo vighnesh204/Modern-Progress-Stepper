@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Progress Stepper</title>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+    <div class="container">
+        <!-- Title aur subtitle add kiya hai for better UX -->
+        <h1 class="title">Progress Tracker</h1>
+        <p class="subtitle">Track your journey step by step</p>
+        
+        <!-- Progress text jo current step dikhata hai -->
+        <div class="progress-text" id="progressText">Step 1 of 4</div>
+        
+        <div class="progress-container">
+            <div class="progress" id="progress"></div>
+            <div class="circle active" data-step="1">1</div>
+            <div class="circle" data-step="2">2</div>
+            <div class="circle" data-step="3">3</div>
+            <div class="circle" data-step="4">4</div>
+        </div>
+
+        <!-- Step labels add kiye hain better understanding ke liye -->
+        <div class="step-labels">
+            <div class="step-label active">Start</div>
+            <div class="step-label">Progress</div>
+            <div class="step-label">Review</div>
+            <div class="step-label">Complete</div>
+        </div>
+
+        <div class="button-container">
+            <button class="btn" id="prev" disabled>← Previous</button>
+            <button class="btn" id="next">Next →</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
