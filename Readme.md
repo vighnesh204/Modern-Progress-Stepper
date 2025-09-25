@@ -28,7 +28,7 @@ It allows users to **navigate step by step**, view progress visually, and includ
 
 ## ⚡ Live Demo  
 
-🔗 **[Click here to view live]()**  
+🔗 **[Click here to view live](https://vighnesh204.github.io/Modern-Progress-Stepper/)**  
 
 ---
 
