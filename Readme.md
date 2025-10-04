@@ -1,5 +1,7 @@
 # 🚀 Modern Progress Stepper  
 
+**Project 2** of 50 Days 50 Projects using HTML, CSS & JavaScript
+
 A sleek and modern **progress tracker** built using **HTML, CSS, and JavaScript**.  
 It allows users to **navigate step by step**, view progress visually, and includes features like:  
 - ✅ Step navigation with buttons & circles  
@@ -35,5 +37,6 @@ It allows users to **navigate step by step**, view progress visually, and includ
 ## ⚡ How to Use  
 
 1. Clone this repo  
-   
+   ```bash
    git clone https://github.com/vighnesh204/Modern-Progress-Stepper.git
+   ```
